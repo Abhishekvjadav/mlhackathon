@@ -1,0 +1,33 @@
+{
+  "model_name": "DoshaNet - Heterogeneous Graph Attention Network",
+  "architecture": {
+    "type": "HANConv (Heterogeneous Attention Network)",
+    "node_types": [
+      "patient",
+      "symptom",
+      "dosha"
+    ],
+    "edge_types": [
+      "has_trait",
+      "belongs_to",
+      "similar_to"
+    ],
+    "layers": 2,
+    "attention_heads": 4,
+    "parameters": 28646
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "scheduler": "CosineAnnealingLR",
+    "hyperparams": null,
+    "epochs": null,
+    "early_stopping": true
+  },
+  "verification": {
+    "test_accuracy": 98.33,
+    "cv_mean": 100.0,
+    "cv_std": 0.0,
+    "macro_roc_auc": 1.0,
+    "cohens_kappa": 0.9745
+  }
+}

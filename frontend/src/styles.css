@@ -1,0 +1,214 @@
+:root {
+  color-scheme: light;
+  --bg: #0b1220;
+  --panel: #111c33;
+  --text: #e7eefc;
+  --muted: rgba(231, 238, 252, 0.7);
+  --accent: #60a5fa;
+  --danger: #fb7185;
+  --ok: #34d399;
+  --border: rgba(231, 238, 252, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 20% 0%, #15244a 0%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.appShell {
+  min-height: 100vh;
+}
+
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(17, 28, 51, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+.brandTitle {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.brandSubtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.navLink {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.navLink:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.appMain {
+  padding: 18px 22px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: rgba(17, 28, 51, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+}
+
+.panelTitle {
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+label {
+  display: block;
+  font-weight: 650;
+  font-size: 13px;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+select,
+button,
+input {
+  font: inherit;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0f1830;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+@media (max-width: 900px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+button {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  background: rgba(96, 165, 250, 0.22);
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.ok {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.probRow {
+  display: grid;
+  grid-template-columns: 140px 1fr 80px;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.probName {
+  font-weight: 750;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.barTrack {
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.9), rgba(52, 211, 153, 0.85));
+}
+
+.probPct {
+  text-align: right;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.imgCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.imgGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .imgGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
