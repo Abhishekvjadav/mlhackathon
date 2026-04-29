@@ -1,0 +1,51 @@
+{
+  "model_name": "DoshaNet \u2014 Heterogeneous Graph Attention Network",
+  "architecture": {
+    "type": "HANConv (Heterogeneous Attention Network)",
+    "node_types": [
+      "patient",
+      "symptom",
+      "dosha"
+    ],
+    "edge_types": [
+      "has_trait",
+      "belongs_to",
+      "similar_to"
+    ],
+    "layers": 2,
+    "attention_heads": 2,
+    "parameters": 28646
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "scheduler": "CosineAnnealingLR",
+    "hyperparams": {
+      "hidden": 128,
+      "heads": 2,
+      "lr": 0.0037529492615619,
+      "dropout": 0.2322318671941304,
+      "k_neighbors": 9,
+      "weight_decay": 0.009498815381578004
+    },
+    "epochs": 400,
+    "early_stopping": true
+  },
+  "verification": {
+    "test_accuracy": 97.08,
+    "cv_mean": 100.0,
+    "cv_std": 0.0,
+    "macro_roc_auc": 1.0,
+    "cohens_kappa": 0.956,
+    "wilcoxon_p": 0.0082
+  },
+  "techniques": [
+    "Heterogeneous Graph Neural Network (HANConv)",
+    "GNNExplainer \u2014 feature attribution per patient",
+    "MC Dropout \u2014 epistemic uncertainty quantification",
+    "Optuna \u2014 automated hyperparameter optimization",
+    "Stratified K-Fold cross-validation",
+    "Cosine k-NN graph construction (no label leakage)",
+    "Multi-class ROC-AUC + Cohen's Kappa evaluation",
+    "AdamW + CosineAnnealingLR training schedule"
+  ]
+}
